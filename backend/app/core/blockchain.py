@@ -3,6 +3,7 @@ from app.core.consensus.proof_of_work import ProofOfWork
 
 MINING_REWARD = 50
 SYSTEM_ADDRESS = "SYSTEM"
+DEFAULT_WALLET_BALANCE = 10
 class Blockchain:
     def __init__(self, difficulty: int = 4):
         self.chain : list[Block] = []
@@ -39,7 +40,7 @@ class Blockchain:
     
 
     def get_balance(self, address: str) -> int:
-        balance = 0
+        balance = DEFAULT_WALLET_BALANCE
 
         for block in self.chain:
             for transaction in block.transactions:

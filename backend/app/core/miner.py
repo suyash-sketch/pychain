@@ -10,6 +10,9 @@ class Miner:
 
     
     def mine_pending_transactions(self, miner_address: str) -> Block:
+        if not miner_address:
+            raise ValueError("Miner address is required.")
+
         transactions = self.mempool.get_pending_transactions()
 
         reward = Transaction(

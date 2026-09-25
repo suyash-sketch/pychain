@@ -9,7 +9,7 @@ class Transaction:
     sender: str
     receiver: str
     amount: int
-    nonce: int
+    nonce: int = 0
     public_key: str | None = None
     signature: str | None = None
 
